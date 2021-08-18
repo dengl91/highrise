@@ -1,0 +1,115 @@
+// 
+// Theme Name: New Clean Template
+// _banner.sass
+//
+// app/sass/layout/
+//
+
+.main
+    height: 900px
+    padding: 100px 0 0 0
+    position: relative
+    .container
+        display: flex
+        flex-direction: column
+        align-items: center
+    &__logo
+        max-width: 350px
+    h1
+        color: #fff
+        font-size: 84px
+        letter-spacing: -3px
+        margin: 30px 0 10px 0
+    h3
+        font-size: 24px
+        color: #fff
+        margin: 0 0 20px 0
+    &__btn
+        width: 120px
+        height: 54px
+        background: #fff
+        border-radius: 16px
+        box-shadow: 0 0 20px #0000001a
+        display: flex
+        align-items: center
+        justify-content: center
+        margin: 0 15px
+        transition: 0.4s
+        img
+            width: auto
+            height: 70%
+        &.itunes
+            img
+                opacity: 0.75
+        &:hover
+            opacity: 0.75
+            transform: scale(1.1)
+    &__video
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -2
+        pointer-events: none
+        video
+            width: 100%
+            height: 100%
+            object-fit: cover
+        &-cover
+            width: 100%
+            height: 100%
+            background: #00000080
+            position: absolute
+            top: 0
+            left: 0
+            z-index: -1
+            pointer-events: none
+
+.banner
+    background: #e6e6e6
+    .container
+        height: 240px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+    h1
+        font-size: 64px
+    &__line
+        height: 80px
+        background: var(--active)
+
+@media (max-width: 768px)
+    .main
+        height: 490px
+        &__logo
+            max-width: 90%
+        h1
+            font-size: 34px
+            text-align: center
+            line-height: 42px
+            letter-spacing: -0.4px
+            margin: 10px 0
+        h3
+            font-size: 15px
+            text-align: center
+            line-height: 24px
+        &__btns
+            width: 100%
+            background-image: linear-gradient(180deg, #ffffff00, #ffffff)
+            justify-content: center
+            padding: 40px 0
+            position: fixed
+            left: 0
+            bottom: 0
+        &__btn
+            width: 100px
+            height: 42px
+            border-radius: 10px
+
+    .banner
+        .container
+            height: 180px
+        h1
+            font-size: 42px

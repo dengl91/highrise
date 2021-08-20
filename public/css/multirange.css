@@ -1,0 +1,160 @@
+@supports (--css: variables) {
+	input[type="range"].multirange {
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+		vertical-align: top;
+	}
+	input[type="range"].multirange::-moz-range-thumb {
+		transform: scale(1);
+		/* FF doesn't apply position it seems */
+	}
+	input[type="range"].multirange.original {
+		position: absolute;
+	}
+	input[type="range"].multirange.original::-webkit-slider-thumb {
+		background: var(--main);
+		position: relative;
+		z-index: 2;
+	}
+	input[type="range"].multirange.original::-moz-range-thumb {
+		background: var(--main);
+		z-index: 2;
+	}
+	input[type="range"].multirange::-moz-range-track {
+		border-color: transparent;
+		/* needed to switch FF to "styleable" control */
+	}
+	input[type="range"].multirange.middle {
+		position: absolute;
+		-webkit-appearance: none;
+	}
+	input[type="range"].multirange.middle:focus {
+		outline: none;
+	}
+	input[type="range"].multirange.middle::-moz-range-thumb {
+		position: relative;
+		z-index: 1;
+		height: 9px;
+		width: var(--size);
+		margin-top: 6px;
+		margin-bottom: 6px;
+		background: #fff;
+		cursor: pointer;
+		border: 0;
+	}
+	input[type="range"].multirange.middle::-webkit-slider-thumb {
+		position: relative;
+		z-index: 1;
+		height: 9px;
+		width: var(--size);
+		margin-top: 6px;
+		margin-bottom: 6px;
+		background: #fff;
+		-webkit-appearance: none;
+		cursor: pointer;
+	}
+	input[type="range"].multirange.ghost {
+		position: relative;
+		background: linear-gradient(to top, #fff 42%, #ccc 42%, #ccc 55%, #fff 54%);
+		--track-background: linear-gradient(to right, transparent var(--low), var(--range-color) 0, var(--range-color) var(--high), transparent 0) no-repeat 0 50% / 100% 25%;
+		--range-color: #F5D9AE;
+	}
+	input[type="range"].multirange.ghost::-webkit-slider-runnable-track {
+		background: var(--track-background);
+	}
+	input[type="range"].multirange.ghost::-moz-range-track {
+		background: var(--track-background);
+	}
+	input[type="range"].multirange.ghost::-webkit-slider-thumb {
+		background: #fff;
+		border: 4px solid var(--blue);
+		position: relative;
+		z-index: 2;
+	}
+	input[type="range"].multirange.ghost::-moz-range-thumb {
+		background: #fff;
+		border: 4px solid var(--blue);
+		z-index: 2;
+	}
+	input.multirange{
+		-webkit-appearance: none;
+	}
+	input.multirange:focus{
+		outline: none;
+	}
+	input.multirange::-webkit-slider-thumb{
+		width: 16px;
+		height: 16px;
+		background: #fff;
+		border: 4px solid var(--blue);
+		border-radius: 50%;
+		top: -2px;
+		z-index: 2;
+		-webkit-appearance: none;
+	}
+	input.multirange.original::-webkit-slider-runnable-track{
+		height: 2px;
+		background: #fff;
+		border: 4px solid var(--blue);
+		border-radius: 8px;
+		margin: 8px 0 0 0;
+	}
+	input.multirange.original::-webkit-slider-thumb{
+		background: #fff;
+		top: -12px;
+		left: -4px;
+		z-index: 2;
+	}
+	input.multirange.ghost::-webkit-slider-thumb{
+		top: 0px;
+	}
+}
+
+
+/* IE */
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+	input[type="range"].multirange {
+		padding: 0;
+		vertical-align: top;
+	}
+	input[type="range"].multirange::-ms-track {
+		color: transparent;
+		/* Hide tick marks */
+		background: transparent;
+		border: 0;
+	}
+	input[type="range"].multirange::-ms-fill-lower {
+		background: transparent;
+	}
+	input[type="range"].multirange::-ms-fill-upper {
+		background: transparent;
+	}
+	input[type="range"].multirange.original {
+		position: absolute;
+	}
+	input[type="range"].multirange.middle {
+		position: absolute;
+	}
+	input[type="range"].multirange.ghost {
+		position: relative;
+	}
+	input[type="range"].multirange.ghost::-ms-fill-upper {
+		background: #ddd;
+	}
+	/* Switch colors when inputs are switched, see JavaScript */
+	input[type="range"].multirange.switched.original::-ms-fill-lower {
+		background: transparent;
+	}
+	input[type="range"].multirange.switched.original::-ms-fill-upper {
+		background: #ddd;
+	}
+	input[type="range"].multirange.switched.ghost::-ms-fill-upper {
+		background: transparent;
+	}
+	input[type="range"].multirange.switched.ghost::-ms-fill-lower {
+		background: #ddd;
+	}
+}

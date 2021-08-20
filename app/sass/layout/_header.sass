@@ -7,18 +7,54 @@
 
 .header
     width: 100%
-    height: 120px
     color: #fff
-    position: fixed
+    padding: 32px 0
+    position: sticky
     top: 0
     left: 0
     z-index: 9
+    transition: 0.3s
+    &.scrolled
+        background: var(--gray__800)
+        padding: 16px 0
     .container
         height: 100%
         display: flex
         align-items: center
     &__logo
         margin: 0 48px 0 0
+        img
+            transition: 0.3s
+        .scrolled &
+            img
+                height: 36px
+    &__phone
+        margin: 0 24px 0 auto
+    &__workload
+        font-size: 10px
+        text-align: right
+        text-transform: uppercase
+        margin: 0 0 4px 0
+        &::before
+            content: ''
+            width: 8px
+            height: 8px
+            background: var(--status__green)
+            border-radius: 50%
+            margin: 0 4px 0 0
+            display: inline-block
+    &__number
+        font-weight: 500
+    &__btn
+        font-size: 14px
+        line-height: 40px
+        border: 1px solid #fff
+        border-radius: 6px
+        padding: 0 24px
+        transition: 0.3s
+        cursor: pointer
+        &:hover
+            background: #ffffff1a
 
 nav
     font-weight: 500
@@ -27,6 +63,64 @@ nav
         margin: 0 40px 0 0
         &.active
             color: var(--active)
+
+.lang
+    margin: 0 0 0 36px
+    position: relative
+    &__main
+        width: 48px
+        height: 48px
+        background-repeat: no-repeat
+        background-position: 0 50%
+        position: relative
+        cursor: pointer
+        &.ru
+            background-image: url(../img/lang/ru.svg)
+        &::after
+            content: ''
+            width: 12px
+            height: 48px
+            background: url(../img/icons/dropdown.svg) no-repeat 50%
+            position: absolute
+            top: 0
+            right: 0
+    &__content
+        width: 72px
+        background: var(--gray__600)
+        border-radius: 8px
+        overflow: hidden
+    &__content
+        display: flex
+        flex-direction: column
+        position: absolute
+        top: -200px
+        right: -12px
+        transition: 0.2s
+        .active > &
+            top: 100%
+    &__item
+        height: 42px
+        background-repeat: no-repeat
+        background-position: 12px 50%
+        position: relative
+        cursor: pointer
+        &:hover
+            background-color: var(--blue__lite)
+        &.ru
+            background-image: url(../img/lang/ru.svg)
+        &.en
+            background-image: url(../img/lang/en.svg)
+        &.th
+            background-image: url(../img/lang/th.svg)
+        &.active
+            &::after
+                content: ''
+                width: 12px
+                height: 42px
+                background: url(../img/icons/check.svg) no-repeat 50%
+                position: absolute
+                top: 0
+                right: 12px
 
 .header__menu-btn
     display: none

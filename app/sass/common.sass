@@ -8,7 +8,7 @@
 //
 
 :root
-    --container: 1340px
+    --container: 1300px
     --text: #191926
     --size: 16px
     --brand: #F5D9AE
@@ -16,10 +16,21 @@
     --stroke: #e3e3e3
     --blue: #3838DC
     --blue__lite: #657BEC
+    --blue__lite--alt: #657BEC1a
     --blue__dark: #2727B5
     --orange: #FEBF59
+    --orange__light: #F5D9AE
     --orange__dark: #EF7700
-    --gray: #c4c4c4
+    --status__red: #F84747
+    --status__green: #41C284
+    --status__blue: #70B9EE
+    --gray: #E8E9EB
+    --gray__100: #E8E9EB
+    --gray__200: #D4D4D9
+    --gray__400: #B9B9C0
+    --gray__600: #36363F
+    --gray__800: #191926
+    --features__bg: #36363F
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap')
 
@@ -44,6 +55,13 @@ input:focus
 button:focus
     outline: none
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+input[type=number]
+    -moz-appearance: textfield
+
 .row
     display: flex
 .d-flex
@@ -57,6 +75,16 @@ button:focus
     display: flex
     flex: 1 1 0
     flex-direction: column
+.col-33
+    width: 33.33%
+.col-40
+    width: 40%
+.col-50
+    width: 50%
+.col-60
+    width: 60%
+.col-66
+    width: 66.66%
 
 .aic
     align-items: center
@@ -65,8 +93,17 @@ button:focus
 .jcsb
     justify-content: space-between
 
+.gap-1
+    gap: 24px
+
 .tac
     text-align: center
+
+[class*=img]
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
 
 .container
     width: 100%
@@ -84,6 +121,8 @@ button:focus
         position: absolute
         top: 0
         left: 0
+        z-index: -1
+        pointer-events: none !important
     &__content
         width: 2758px
         height: 1944px
@@ -110,19 +149,6 @@ a.section-header
     &:hover
         color: var(--active)
 
-.wom
-    width: 100px
-    height: 100px
-    background: url(../img/wom.gif) no-repeat 50%
-    background-size: contain
-    position: fixed
-    top: 20px
-    right: 20px
-    z-index: 9
-    transition: 0.4s
-    &:hover
-        transform: scale(1.2)
-
 footer
     padding: 200px 0 100px 0
     .container
@@ -138,6 +164,83 @@ footer
             padding: 0 20px
             &:hover
                 color: var(--text)
+
+.input
+    &__wrap
+        height: 56px
+        border: 1px solid var(--gray__200)
+        border-radius: 8px
+        padding: 0 24px
+        margin: 0 0 16px 0
+        position: relative
+        label
+            font-size: 12px
+            color: var(--gray__400)
+            position: absolute
+            top: 8px
+            z-index: 0
+            cursor: text
+        input
+            width: 100%
+            font-size: 16px
+            color: var(--gray__800)
+            line-height: 40px
+            border: none
+            padding: 14px 0 0 0
+
+.modal
+    $c: &
+    width: 100vw
+    height: 100vh
+    background: #00000033
+    position: fixed
+    display: none
+    align-items: center
+    justify-content: center
+    top: 0
+    left: 0
+    z-index: 9
+    &.active
+        display: flex
+    &__container
+        width: 100%
+        max-width: 780px
+        background: #fff
+        border-radius: 8px
+        padding: 40px 30px
+        animation: fadeIn 0.4s forwards
+        span
+            text-align: center
+            display: block
+    &__title
+        font-size: 32px
+        margin: 0 0 32px 0
+    &__subtitle
+        margin: 0 0 20px 0
+    &__img
+        width: 100%
+        height: 80vh
+        object-fit: contain
+    &__close
+        width: 24px
+        height: 24px
+        background: url(../img/icons/close.svg) no-repeat 50%
+        position: absolute
+        top: 20px
+        right: 20px
+        transition: 0.3s
+        cursor: pointer
+        &:hover
+            transform: rotate(90deg)
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+        transform: scale(0)
+    100%
+        opacity: 1
+        transform: scale(1)
+
 .footer
     &__header
         font-size: 20px
@@ -204,3 +307,5 @@ footer
 
 @import layout/header
 @import layout/banner
+@import layout/search
+@import layout/homepage

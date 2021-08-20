@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Highrise</title>
 
+    <link rel="stylesheet" href="public/css/slick.css">
+    <link rel="stylesheet" href="public/css/multirange.css">
     <link rel="stylesheet" href="public/css/common.css">
 </head>
 <body>
@@ -30,8 +32,325 @@
                 <div class="header__workload active">Мы работаем</div>
                 <a href="tel:88009323454" class="header__number">8 (800) 932 34 54</a>
             </div>
+            <div class="header__btn" data-control="modal--request" data-focus="username">Заказать звонок</div>
+            <div class="lang">
+                <div class="lang__main ru"></div>
+                <div class="lang__content">
+                    <div class="lang__item en"></div>
+                    <div class="lang__item ru active"></div>
+                    <div class="lang__item th"></div>
+                </div>
+            </div>
         </div>
     </header>
+
+    <section class="banner">
+        <div class="container">
+            <div class="slider">
+                <div class="slider__item" data-bg="public/img/main__bg.jpg">
+                    <div class="slider__title">Найдите свою<br> идеальную квартиру<br> в <span>Паттайе</span></div>
+                </div>
+                <div class="slider__item" data-bg="public/img/main__bg.jpg">
+                    <div class="slider__title">Выберите свою<br> идеальную квартиру<br> в <span>Паттайе</span></div>
+                </div>
+                <div class="slider__item" data-bg="public/img/main__bg.jpg">
+                    <div class="slider__title">Найдите свою<br> идеальную квартиру<br> в <span>Паттайе</span></div>
+                </div>
+                <div class="slider__item" data-bg="public/img/main__bg.jpg">
+                    <div class="slider__title">Выберите свою<br> идеальную квартиру<br> в <span>Паттайе</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="search__content">
+        <div class="container">
+            <div class="search__item">
+                <div class="search__subtitle">Хочу</div>
+                <div class="search__title">Купить</div>
+                <div class="search__subcontent">
+                    <div class="search__subitem active">Купить</div>
+                    <div class="search__subitem">Инвестировать</div>
+                    <div class="search__subitem">Арендовать</div>
+                </div>
+            </div>
+            <div class="search__item">
+                <div class="search__subtitle">Тип жилья</div>
+                <div class="search__title">Новостройку</div>
+                <div class="search__subcontent">
+                    <div class="search__subitem active">Новостройку</div>
+                    <div class="search__subitem">Вторичку</div>
+                    <div class="search__subitem">Виллу, коттедж</div>
+                </div>
+            </div>
+            <div class="search__item">
+                <div class="search__subtitle">Площадь</div>
+                <div class="search__title">Любой площади</div>
+                <div class="search__subcontent range">
+                    <div class="search__subtitle">Укажите диапазон площади:</div>
+                    <div class="filter__range">
+                        <span><input type="number" class="low-value" placeholder="23"> м<sup>2</sup></span>
+                        <span class="filter__sep">-</span>
+                        <span><input type="number" class="high-value" placeholder="488"> м<sup>2</sup></span>
+                    </div>
+                    <div class="filter__wrapper">
+                        <input type="range" name="area" class="filter-range" multiple value="23,488" min="23" max="488" step="1">
+                    </div>
+                </div>
+            </div>
+            <div class="search__item">
+                <div class="search__subtitle">Стоимость объекта</div>
+                <div class="search__title">Любой стоимости</div>
+                <div class="search__subcontent range">
+                    <div class="search__subtitle">Укажите диапазон стоимости:</div>
+                    <div class="filter__range">
+                        <span><input type="number" class="low-value" placeholder="1"> млн. ₽</span>
+                        <span class="filter__sep">-</span>
+                        <span><input type="number" class="high-value" placeholder="10"> млн. ₽</span>
+                    </div>
+                    <div class="filter__wrapper">
+                        <input type="range" name="price" class="filter-range" multiple value="1,10" min="1" max="10" step="0.1">
+                    </div>
+                </div>
+            </div>
+            <div class="search__item search__btn">Искать</div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container d-flex gap-1">
+            <div class="features__item">
+                <div class="features__img">
+                    <img src="public/img/icons/safety.svg" alt="Преимущество">
+                </div>
+                <div class="features__title"><span>Безопасные</span> сделки и надежные застройщики</div>
+            </div>
+            <div class="features__item">
+                <div class="features__img">
+                    <img src="public/img/icons/agreement.svg" alt="Преимущество">
+                </div>
+                <div class="features__title"><span>Бесплатное</span> юридическое сопровождение сделки</div>
+            </div>
+            <div class="features__item">
+                <div class="features__img">
+                    <img src="public/img/icons/crane.svg" alt="Преимущество">
+                </div>
+                <div class="features__title"><span>Приёмка</span> квартиры напрямую от застройщика</div>
+            </div>
+            <div class="features__item">
+                <div class="features__img">
+                    <img src="public/img/icons/house-plan.svg" alt="Преимущество">
+                </div>
+                <div class="features__title"><span>Ремонт и меблировка</span> объекта под ключ по желанию</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="expected">
+        <div class="container">
+            <h2>Скоро будут <span>готовы</span></h2>
+            <div class="expected__content d-flex gap-1">
+                <div class="expected__item" data-bg="public/img/expected__img.png">
+                    <div class="expected__title">Arcadia Center Suites</div>
+                    <div class="expected__place">Паттайя, Центр</div>
+                    <div class="expected__price"><span>от</span> 139 р/м2</div>
+                    <div class="expected__percent">92<span>%</span></div>
+                    <div class="expected__line">
+                        <div class="expected__subline" data-width="92"></div>
+                    </div>
+                </div>
+                <div class="expected__item" data-bg="public/img/expected__img.png">
+                    <div class="expected__title">Arcadia Center Suites</div>
+                    <div class="expected__place">Паттайя, Центр</div>
+                    <div class="expected__price"><span>от</span> 139 р/м2</div>
+                    <div class="expected__percent">72<span>%</span></div>
+                    <div class="expected__line">
+                        <div class="expected__subline" data-width="72"></div>
+                    </div>
+                </div>
+                <div class="expected__item" data-bg="public/img/expected__img.png">
+                    <div class="expected__title">Arcadia Center Suites</div>
+                    <div class="expected__place">Паттайя, Центр</div>
+                    <div class="expected__price"><span>от</span> 139 р/м2</div>
+                    <div class="expected__percent">92<span>%</span></div>
+                    <div class="expected__line">
+                        <div class="expected__subline" data-width="92"></div>
+                    </div>
+                </div>
+                <div class="expected__item" data-bg="public/img/expected__img.png">
+                    <div class="expected__title">Arcadia Center Suites</div>
+                    <div class="expected__place">Паттайя, Центр</div>
+                    <div class="expected__price"><span>от</span> 139 р/м2</div>
+                    <div class="expected__percent">92<span>%</span></div>
+                    <div class="expected__line">
+                        <div class="expected__subline" data-width="92"></div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="presentation">
+        <div class="container">
+            <h2>Скачайте презентацию с новыми объектами недвижимости</h2>
+            <a href="" class="presentation__link" target="_blank">Скачать презентацию (1,3Mb pdf)</a>
+        </div>
+    </section>
+
+    <section class="showcase">
+        <div class="container">
+            <h2><span>1 841 объект</span> недвижимости<br> для покупки, аренды и инвестиций</h2>
+            <div class="showcase__content d-flex gap-1">
+                <div class="col-33">
+                    <div class="showcase__item" data-bg="public/img/showcase__1.jpg">
+                        <div class="showcase__wrap">
+                            <div class="showcase__subtitle">655<br><span>Вариантов</span></div>
+                            <div class="showcase__tag hot">Скидки до 30%</div>
+                            <div class="showcase__title">Квартиры и апартаменты в нвостройках</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-66">
+                    <div class="d-flex gap-1">
+                        <div class="col-50">
+                            <div class="showcase__item" data-bg="public/img/showcase__2.jpg">
+                                <div class="showcase__wrap">
+                                    <div class="showcase__subtitle">65<br><span>Вариантов</span></div>
+                                    <div class="showcase__title">Вторичное<br> жилье</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-50">
+                            <div class="showcase__item" data-bg="public/img/showcase__3.jpg">
+                                <div class="showcase__wrap">
+                                    <div class="showcase__subtitle">362<br><span>Варианта</span></div>
+                                    <div class="showcase__title">Дома, виллы<br> и коттеджи</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-1">
+                        <div class="col-66">
+                            <div class="showcase__item" data-bg="public/img/showcase__4.jpg">
+                                <div class="showcase__wrap">
+                                    <div class="showcase__subtitle">178<br><span>Вариантов</span></div>
+                                    <div class="showcase__tag profit">Скидки до 30%</div>
+                                    <div class="showcase__title">Инвестиционные<br> проекты</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-33">
+                            <div class="showcase__item" data-bg="public/img/showcase__5.jpg">
+                                <div class="showcase__wrap">
+                                    <div class="showcase__subtitle">362<br><span>Варианта</span></div>
+                                    <div class="showcase__title">Аренда<br> жилья</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="actual">
+        <div class="container">
+            <h2>Самое актуальное <span>сегодня</span></h2>
+            <div class="actual__content d-flex gap-1">
+                <div class="actual__item">
+                    <div class="actual__img">
+                        <img src="public/img/actual__img.png" alt="Актуальное">
+                    </div>
+                    <div class="actual__info">
+                        <div class="d-flex">
+                            <div class="actual__title">Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo</div>
+                            <div class="actual__range">36м2</div>
+                        </div>
+                        <div class="actual__place">Паттайя, Джомтьен</div>
+                        <div class="d-flex jcsb">
+                            <div class="actual__price">2 384 990 ₽</div>
+                            <div class="actual__subprice">66 тыс. ₽/м2</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="actual__item">
+                    <div class="actual__img">
+                        <img src="public/img/actual__img.png" alt="Актуальное">
+                    </div>
+                    <div class="actual__info">
+                        <div class="d-flex">
+                            <div class="actual__title">Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo</div>
+                            <div class="actual__range">36м2</div>
+                        </div>
+                        <div class="actual__place">Паттайя, Джомтьен</div>
+                        <div class="d-flex jcsb">
+                            <div class="actual__price">2 384 990 ₽</div>
+                            <div class="actual__subprice">66 тыс. ₽/м2</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="actual__item">
+                    <div class="actual__img">
+                        <img src="public/img/actual__img.png" alt="Актуальное">
+                    </div>
+                    <div class="actual__info">
+                        <div class="d-flex">
+                            <div class="actual__title">Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo</div>
+                            <div class="actual__range">36м2</div>
+                        </div>
+                        <div class="actual__place">Паттайя, Джомтьен</div>
+                        <div class="d-flex jcsb">
+                            <div class="actual__price">2 384 990 ₽</div>
+                            <div class="actual__subprice">66 тыс. ₽/м2</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="actual__item">
+                    <div class="actual__img">
+                        <img src="public/img/actual__img.png" alt="Актуальное">
+                    </div>
+                    <div class="actual__info">
+                        <div class="d-flex">
+                            <div class="actual__title">Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo</div>
+                            <div class="actual__range">36м2</div>
+                        </div>
+                        <div class="actual__place">Паттайя, Джомтьен</div>
+                        <div class="d-flex jcsb">
+                            <div class="actual__price">2 384 990 ₽</div>
+                            <div class="actual__subprice">66 тыс. ₽/м2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal modal--request active">
+        <div class="modal__container">
+            <div class="d-flex">
+                <div class="col-60">
+                    <div class="modal__title">Хотите, чтобы мы вам перезвонили?</div>
+                    <form class="form__request">
+                        <div class="input__wrap">
+                            <label for="now">Когда вам перезвоить</label>
+                            <input type="text" id="now" name="now" placeholder="Сейчас">
+                        </div>
+                        <div class="input__wrap">
+                            <label for="userphone">Ваш телефон</label>
+                            <input type="text" id="userphone" name="userphone" placeholder="+Х (ХХХ) ХХХ-ХХ-ХХ" autocomplete="off">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-40"></div>
+            </div>
+            <div class="modal__close"></div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="public/js/slick.js"></script>
+    <script src="public/js/multirange.js"></script>
+    <script src="public/js/main.js"></script>
     
 </body>
 </html>

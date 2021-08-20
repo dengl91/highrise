@@ -83,8 +83,8 @@
                     <div class="search__subitem">Виллу, коттедж</div>
                 </div>
             </div>
-            <div class="search__item">
-                <div class="search__subtitle">Площадь</div>
+            <div class="search__item active">
+                <div class="search__subtitle">Площадь, м2</div>
                 <div class="search__title">Любой площади</div>
                 <div class="search__subcontent range">
                     <div class="search__subtitle">Укажите диапазон площади:</div>
@@ -93,13 +93,16 @@
                         <span class="filter__sep">-</span>
                         <span><input type="number" class="high-value" placeholder="488"> м<sup>2</sup></span>
                     </div>
-                    <div class="filter__wrapper">
-                        <input type="range" name="area" class="filter-range" multiple value="23,488" min="23" max="488" step="1">
+                    <div class="multirange__content" data-fixmin="23" data-fixmax="488" data-min="0" data-max="100">
+                        <div class="multirange__bg"></div>
+                        <div class="multirange__line"></div>
+                        <div class="multirange__thumb"></div>
+                        <div class="multirange__subthumb"></div>
                     </div>
                 </div>
             </div>
             <div class="search__item">
-                <div class="search__subtitle">Стоимость объекта</div>
+                <div class="search__subtitle">Стоимость объекта, млн. ₽</div>
                 <div class="search__title">Любой стоимости</div>
                 <div class="search__subcontent range">
                     <div class="search__subtitle">Укажите диапазон стоимости:</div>

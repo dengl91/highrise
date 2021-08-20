@@ -32,7 +32,7 @@
                 <div class="header__workload active">Мы работаем</div>
                 <a href="tel:88009323454" class="header__number">8 (800) 932 34 54</a>
             </div>
-            <div class="header__btn" data-control="modal--request" data-focus="username">Заказать звонок</div>
+            <div class="header__btn" data-control="modal--request" data-focus="userphone">Заказать звонок</div>
             <div class="lang">
                 <div class="lang__main ru"></div>
                 <div class="lang__content">
@@ -325,7 +325,7 @@
         </div>
     </section>
 
-    <div class="modal modal--request active">
+    <div class="modal modal--request">
         <div class="modal__container">
             <div class="d-flex">
                 <div class="col-60">
@@ -339,6 +339,7 @@
                             <label for="userphone">Ваш телефон</label>
                             <input type="text" id="userphone" name="userphone" placeholder="+Х (ХХХ) ХХХ-ХХ-ХХ" autocomplete="off">
                         </div>
+                        <input type="submit" id="request-btn" value="Позвонить мне">
                     </form>
                 </div>
                 <div class="col-40"></div>
@@ -348,6 +349,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/imask@6.1.0/dist/imask.js"></script>
     <script src="public/js/slick.js"></script>
     <script src="public/js/multirange.js"></script>
     <script src="public/js/main.js"></script>

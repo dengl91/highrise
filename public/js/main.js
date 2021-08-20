@@ -160,11 +160,14 @@
 
         var user_phone = document.querySelector('[name=userphone]');
         var maskOptions = {
-            mask: '+375 (00) 000-00-00',
+            mask: '+8 (000) 000-00-00',
             lazy: false
         } 
         if ( user_phone ) {
             var mask = new IMask(user_phone, maskOptions);
+            mask.on('complete', function() {
+                $('#request-btn').addClass('active');
+            });
         }
 
         // modal

@@ -88,18 +88,18 @@ nav
                 transform: rotate(180deg)
     &__content
         width: 72px
+        max-height: 0
         background: var(--gray__600)
         border-radius: 8px
-        overflow: hidden
-    &__content
         display: flex
         flex-direction: column
         position: absolute
-        top: -200px
+        top: 100%
         right: -12px
+        overflow: hidden
         transition: 0.2s
         .active > &
-            top: 100%
+            max-height: 200px
     &__item
         height: 42px
         background-repeat: no-repeat

@@ -93,6 +93,12 @@
 
         // header
 
+        if ($(document).scrollTop() > 100) {
+            $('.header').addClass('scrolled');
+        } else {
+            $('.header').removeClass('scrolled');
+        }
+
         $(window).scroll(function () {
             if ($(document).scrollTop() > 100) {
                 $('.header').addClass('scrolled');
@@ -234,7 +240,6 @@
 
         // multirange
 
-        var parent_width = $('.multirange__content').width();
         $('.multirange__content').data('selected', 0);
 
         $('.multirange__thumb').on('mousedown', function(e) {
@@ -245,50 +250,116 @@
             $(this).parent().data('selected', 2);
         });
 
+        $('.low-value, .high-value').on('keyup', function(e) {
+            // Escape from backspace
+            if ( e.keyCode == 8 ) return;
+
+            let multirange = $(this).closest('.filter__range').next('.multirange__content');
+            let value      = parseInt($(this).val());
+            let min_value  = parseInt($(this).attr('min'));
+            let max_value  = parseInt($(this).attr('max'));
+            let curr_max = multirange.data('fixmax');
+            if ( $(this).hasClass('low-value') ) {
+                curr_max = parseInt($(this).closest('.filter__range').find('.high-value').val());
+                if ( !curr_max ) curr_max = multirange.data('fixmax');
+            }
+            let curr_min   = parseInt($(this).closest('.filter__range').find('.low-value').val());
+            if ( !curr_min ) curr_min = multirange.data('fixmin');
+            let range      = max_value - min_value;
+            let offset     = Math.round(100 * (value / range));
+
+            // custom selector
+            if ( $(this).hasClass('low-value') ) {
+                if ( value >= max_value ) $(this).val(max_value);
+                if ( offset >= 100 ) offset = 100;
+                if ( value >= curr_max ) {
+                    offset = multirange.attr('data-max');
+                    $(this).val(curr_max);
+                }
+                multirange.find('.multirange__thumb').css('left', offset + '%');
+                multirange.find('.multirange__line').css('left', offset + '%');
+                multirange.attr('data-min', offset);
+            } else {
+                if ( value <= min_value ) return;
+                if ( offset <= 0 ) offset = 0;
+                if ( value >= curr_max ) {
+                    offset = multirange.attr('data-max');
+                    $(this).val(curr_max);
+                    offset = 100;
+                }
+                if ( value < curr_min ) {
+                    return;
+                }
+                multirange.find('.multirange__subthumb').css('left', offset + '%');
+                multirange.attr('data-max', offset);
+            }
+            let line_width = multirange.attr('data-max') - multirange.attr('data-min');
+            multirange.find('.multirange__line').css('width', line_width + '%');
+
+            populate_value(multirange);
+        });
+
         $('.multirange__content').on('mousemove', function(e) {
-            if ( $(this).data('selected') == 1 ) {
-                offset = Math.round( (e.pageX - $('.multirange__content').offset().left - 8) / parent_width * 100 );
+            if ( $(e).data('selected') != 0 ) {
+                let pageX = e.pageX;
+                let fixed = $(this).data('fixed');
+                multirange(this, pageX, fixed);
+            }
+        });
 
-                let offset_max = $(this).attr('data-max');
+        function multirange(e, pageX, fixed) {
+            // calculate value
+            let fixmin = $(e).data('fixmin');
+            let fixmax = $(e).data('fixmax');
+            let range  = fixmax - fixmin;
+            var multirange_width = $(e).width();
 
+            if ( $(e).data('selected') == 1 ) {
+                offset = Math.round( ( (pageX - $(e).offset().left - 8) / multirange_width ) * 100 );
+
+                let offset_max = $(e).attr('data-max');
                 if ( offset >= 100 ) offset = 100;
                 if ( offset <= 0 ) offset = 0;
                 if ( offset >= offset_max ) offset = offset_max;
-                $(this).find('.multirange__thumb').css('left', offset + '%');
-                $(this).find('.multirange__line').css('left', offset + '%');
-                $(this).attr('data-min', offset);
-
-                // calculate value
-                let fixmin = $(this).data('fixmin');
-                let fixmax = $(this).data('fixmax');
-                let range  = fixmax - fixmin;
-                let fixval = Math.round(fixmin + range * ( offset / 100 ));
+                $(e).find('.multirange__thumb').css('left', offset + '%');
+                $(e).find('.multirange__line').css('left', offset + '%');
+                $(e).attr('data-min', offset);
+                
+                let fixval = (fixmin + range * ( offset / 100 )).toFixed(fixed);
                 // custom selector
-                $(this).prev('.filter__range').find('.low-value').val(fixval);
+                $(e).prev('.filter__range').find('.low-value').val(fixval);
             }
-            if ( $(this).data('selected') == 2 ) {
-                offset = Math.round( (e.pageX - $('.multirange__content').offset().left - 8) / parent_width * 100 );
+            if ( $(e).data('selected') == 2 ) {
+                offset = Math.round( (pageX - $(e).offset().left - 8) / multirange_width * 100 );
 
-                let offset_min = $(this).attr('data-min');
-
+                let offset_min = $(e).attr('data-min');
                 if ( offset >= 100 ) offset = 100;
                 if ( offset <= 0 ) offset = 0;
                 if ( offset <= offset_min ) offset = offset_min;
-                $(this).find('.multirange__subthumb').css('left', offset + '%');
-                $(this).attr('data-max', offset);
-                // calculate value
-                let fixmin = $(this).data('fixmin');
-                let fixmax = $(this).data('fixmax');
-                let range  = fixmax - fixmin;
-                let fixval = Math.round(fixmax - (range * ( (100 - offset) / 100 )));
+                $(e).find('.multirange__subthumb').css('left', offset + '%');
+                $(e).attr('data-max', offset);
+ 
+                let fixval = (fixmax - (range * ( (100 - offset) / 100 ))).toFixed(fixed);
                 // custom selector
-                $(this).prev('.filter__range').find('.high-value').val(fixval);
+                $(e).prev('.filter__range').find('.high-value').val(fixval);
             }
-            if ( $(this).data('selected') != 0 ) {
-                let line_width = $(this).attr('data-max') - $(this).attr('data-min');
-                $(this).find('.multirange__line').css('width', line_width + '%');
+            let line_width = $(e).attr('data-max') - $(e).attr('data-min');
+            $(e).find('.multirange__line').css('width', line_width + '%');
+
+            populate_value(e);
+        }
+
+        function populate_value(e) {
+            let min_val = $(e).closest('.search__item').find('.low-value').val();
+            if ( !min_val ) {
+                min_val = $(e).closest('.search__item').find('.low-value').attr('placeholder');
             }
-        });
+            let max_val = $(e).closest('.search__item').find('.high-value').val();
+            if ( !max_val ) {
+                max_val = $(e).closest('.search__item').find('.high-value').attr('placeholder');
+            }
+            $(e).closest('.search__item').find('.search__title').text(min_val + ' - ' + max_val);
+        }
 
         $(document).on('mouseup', function(e) {
             $('.multirange__content').data('selected', 0);

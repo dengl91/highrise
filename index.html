@@ -83,17 +83,17 @@
                     <div class="search__subitem">Виллу, коттедж</div>
                 </div>
             </div>
-            <div class="search__item active">
+            <div class="search__item">
                 <div class="search__subtitle">Площадь, м2</div>
                 <div class="search__title">Любой площади</div>
                 <div class="search__subcontent range">
                     <div class="search__subtitle">Укажите диапазон площади:</div>
                     <div class="filter__range">
-                        <span><input type="number" class="low-value" placeholder="23"> м<sup>2</sup></span>
+                        <span><input type="number" class="low-value" placeholder="23" min="23" max="488"><span class="filter__hint">м2</span></span>
                         <span class="filter__sep">-</span>
-                        <span><input type="number" class="high-value" placeholder="488"> м<sup>2</sup></span>
+                        <span><input type="number" class="high-value" placeholder="488" min="23" max="488"><span class="filter__hint">м2</span></span>
                     </div>
-                    <div class="multirange__content" data-fixmin="23" data-fixmax="488" data-min="0" data-max="100">
+                    <div class="multirange__content" data-fixmin="23" data-fixmax="488" data-min="0" data-max="100" data-fixed="0">
                         <div class="multirange__bg"></div>
                         <div class="multirange__line"></div>
                         <div class="multirange__thumb"></div>
@@ -107,12 +107,15 @@
                 <div class="search__subcontent range">
                     <div class="search__subtitle">Укажите диапазон стоимости:</div>
                     <div class="filter__range">
-                        <span><input type="number" class="low-value" placeholder="1"> млн. ₽</span>
+                        <span><input type="number" class="low-value" placeholder="1" min="1" max="10"><span class="filter__hint">млн. ₽</span></span>
                         <span class="filter__sep">-</span>
-                        <span><input type="number" class="high-value" placeholder="10"> млн. ₽</span>
+                        <span><input type="number" class="high-value" placeholder="10" min="1" max="10"><span class="filter__hint">млн. ₽</span></span>
                     </div>
-                    <div class="filter__wrapper">
-                        <input type="range" name="price" class="filter-range" multiple value="1,10" min="1" max="10" step="0.1">
+                    <div class="multirange__content" data-fixmin="1" data-fixmax="10" data-min="0" data-max="100" data-fixed="1">
+                        <div class="multirange__bg"></div>
+                        <div class="multirange__line"></div>
+                        <div class="multirange__thumb"></div>
+                        <div class="multirange__subthumb"></div>
                     </div>
                 </div>
             </div>

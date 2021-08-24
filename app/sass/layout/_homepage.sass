@@ -122,6 +122,8 @@
         border-radius: 6px
         padding: 0 24px
         display: inline-block
+        &:hover
+            background: var(--blue__lite)
 
 .showcase
     margin: 0 0 140px 0
@@ -143,7 +145,10 @@
         border-radius: 12px
         padding: 32px
         position: relative
+        transition: 0.3s
         cursor: pointer
+        &:hover
+            box-shadow: 0 32px 72px #FFAE551a
         &::after
             content: ''
             width: 100%
@@ -207,14 +212,20 @@
         font-weight: 500
         background: url(../img/icons/fire.svg) no-repeat 0 50%
         padding: 0 0 0 56px
-        margin: 0 0 52px 0
+        margin: 0 0 20px 0
         span
             color: var(--orange__light)
+    &__content
+        padding: 40px 20px
+        margin: 0 -20px
     &__item
         border-radius: 12px
         flex: 0 0 420px
         overflow: hidden
+        transition: 0.3s
         cursor: pointer
+        &:hover
+            box-shadow: 0 30px 40px -30px #FFAE5533
     &__img
         height: 270px
     &__info

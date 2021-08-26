@@ -99,14 +99,14 @@
 
         // header
 
-        if ($(document).scrollTop() > 100) {
+        if ( $(document).scrollTop() > 10 ) {
             $('.header').addClass('scrolled');
         } else {
             $('.header').removeClass('scrolled');
         }
 
         $(window).scroll(function () {
-            if ($(document).scrollTop() > 100) {
+            if ($(document).scrollTop() > 10) {
                 $('.header').addClass('scrolled');
             } else {
                 $('.header').removeClass('scrolled');

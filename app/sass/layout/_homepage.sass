@@ -415,14 +415,23 @@
 
     .showcase
         margin: 0 0 80px 0
+        &__content
+            flex-direction: column
+            .d-flex
+                flex-direction: column
         h2
             font-size: 24px
             line-height: 32px
         &__item
             padding: 24px
+            margin: 0 0 24px 0
         &__title
             font-size: 20px
             line-height: 24px
+        .col-66
+            .d-flex
+                &:first-child
+                    margin: 0
 
     .actual
         margin: 0 0 80px 0
@@ -467,6 +476,7 @@
             margin: 0 0 24px 0
         &__item
             height: 200px
+            margin: 0 0 24px 0
         &__time
             top: 20px
             left: 20px

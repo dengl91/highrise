@@ -15,6 +15,9 @@
         flex-direction: column
         align-items: center
         padding: 24px
+        margin: 0 24px 0 0
+        &:last-child
+            margin: 0
     &__img
         margin: 0 0 16px 0
     &__title
@@ -36,8 +39,6 @@
         margin: 0 0 58px 0
         span
             color: var(--orange__light)
-    &__content
-        gap: 24px
     &__item
         color: #fff
         background-repeat: no-repeat
@@ -46,9 +47,12 @@
         border-radius: 12px
         flex: 0 0 420px
         padding: 54px 32px 0 32px
+        margin: 0 24px 0 0
         position: relative
         overflow: hidden
         cursor: pointer
+        &:last-child
+            margin: 0
         &::after
             content: ''
             width: 100%
@@ -144,6 +148,7 @@
         background-size: cover
         border-radius: 12px
         padding: 32px
+        margin: 0 24px 0 0
         position: relative
         transition: 0.3s
         cursor: pointer
@@ -221,10 +226,13 @@
     &__item
         border-radius: 12px
         flex: 0 0 420px
+        margin: 0 24px 0 0
         position: relative
         overflow: hidden
         transition: 0.3s
         cursor: pointer
+        &:last-child
+            margin: 0
         &:hover
             box-shadow: 0 30px 40px -30px #FFAE5533
     &__img
@@ -331,6 +339,7 @@
         height: 480px
         background-size: cover
         border-radius: 12px
+        margin: 0 24px 0 0
         position: relative
         cursor: pointer
         .col-33 &

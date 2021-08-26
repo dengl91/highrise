@@ -248,11 +248,11 @@
 
         $('.multirange__content').data('selected', 0);
 
-        $('.multirange__thumb').on('mousedown', function(e) {
+        $('.multirange__thumb').on('mousedown touchstart', function(e) {
             $(this).parent().data('selected', 1);
         });
 
-        $('.multirange__subthumb').on('mousedown', function(e) {
+        $('.multirange__subthumb').on('mousedown touchstart', function(e) {
             $(this).parent().data('selected', 2);
         });
 
@@ -305,9 +305,9 @@
             populate_value(multirange);
         });
 
-        $('.multirange__content').on('mousemove', function(e) {
+        $('.multirange__content').on('mousemove touchmove', function(e) {
             if ( $(e).data('selected') != 0 ) {
-                let pageX = e.pageX;
+                let pageX = e.pageX || e.originalEvent.touches && e.originalEvent.touches[0].pageX;
                 let fixed = $(this).data('fixed');
                 multirange(this, pageX, fixed);
             }

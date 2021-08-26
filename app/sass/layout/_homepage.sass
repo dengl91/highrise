@@ -221,6 +221,7 @@
     &__item
         border-radius: 12px
         flex: 0 0 420px
+        position: relative
         overflow: hidden
         transition: 0.3s
         cursor: pointer
@@ -259,3 +260,205 @@
         color: var(--gray__400)
         font-weight: 500
         align-self: center
+    &__card
+        font-size: 12px
+        color: var(--orange__light)
+        line-height: 32px
+        border-radius: 4px
+        padding: 0 12px 0 36px
+        position: absolute
+        top: 16px
+        left: 16px
+        &.beach
+            background: url(../img/icons/beach.svg) no-repeat 12px 50% var(--gray__600)
+        &.hot
+            color: #fff
+            font-weight: 600
+            background: url(../img/icons/hot--alt.svg) no-repeat 12px 50% var(--status__red)
+
+.callback
+    margin: 0 0 180px 0
+    &__content
+        background: url(../img/callback__bg.jpg) no-repeat 50%
+        padding: 160px 60px 60px 60px
+        h2
+            font-size: 40px
+            font-weight: 400
+            margin: 0 0 24px 0
+        h3
+            max-width: 510px
+            font-size: 20px
+            font-weight: 400
+            line-height: 24px
+            margin: 0 0 24px 0
+    &__wrap
+        display: flex
+        margin: 0 0 16px 0
+        input
+            font-size: 16px
+            color: var(--text)
+            line-height: 56px
+            background: #fff
+            border: none
+            border-radius: 8px 0 0 8px
+            padding: 0 24px
+            &[type=text]
+                width: 100%
+                max-width: 320px
+            &[type=submit]
+                color: var(--gray__100)
+                background: var(--gray__400)
+                border-radius: 0 8px 8px 0
+                padding: 0 24px
+                cursor: pointer
+                -webkit-appearance: none
+    &__hint
+        font-size: 12px
+        color: var(--gray__600)
+        a
+            color: var(--blue)
+            text-decoration: underline
+
+.review
+    h2
+        font-size: 44px
+        color: #fff
+        font-weight: 500
+        margin: 0 0 56px 0
+        span
+            color: var(--orange__light)
+    &__item
+        height: 480px
+        background-size: cover
+        border-radius: 12px
+        position: relative
+        cursor: pointer
+        .col-33 &
+            height: 228px
+            margin: 0 0 24px 0
+    &__time
+        font-size: 12px
+        color: var(--orange__light)
+        line-height: 32px
+        background: var(--gray__600)
+        border-radius: 4px
+        padding: 0 12px
+        position: absolute
+        top: 56px
+        left: 56px
+        .col-33 &
+            top: 32px
+            left: 32px
+    &__link
+        width: 320px
+        font-size: 15px
+        color: #fff
+        text-align: center
+        line-height: 56px
+        border: 1px solid #fff
+        border-radius: 6px
+        display: block
+        margin: 24px auto 0 auto
+
+@media (max-width: 768px)
+    .features
+        margin: 56px 0
+        &__item
+            width: 100%
+            flex: auto
+
+    .expected
+        margin: 0 0 80px 0
+        h2
+            font-size: 24px
+        &__content
+            flex-wrap: nowrap
+        &__item
+            flex: 0 0 80%
+            padding: 24px 24px 0 24px
+        &__title
+            font-size: 20px
+        &__percent
+            font-size: 72px
+            line-height: 24px
+            span
+                font-size: 32px
+
+    .presentation
+        padding: 0 20px
+        margin: 0 0 80px 0
+        .container
+            height: 340px
+            background: url(../img/presentation__img--mob.jpg) no-repeat 50% 100%
+            background-size: cover
+            border-radius: 12px
+            padding: 24px
+        h2
+            font-size: 20px
+            line-height: 24px
+            margin: 0 0 16px 0
+        &__link
+            width: 100%
+            font-size: 12px
+            text-align: center
+
+    .showcase
+        margin: 0 0 80px 0
+        h2
+            font-size: 24px
+            line-height: 32px
+        &__item
+            padding: 24px
+        &__title
+            font-size: 20px
+            line-height: 24px
+
+    .actual
+        margin: 0 0 80px 0
+        h2
+            font-size: 24px
+            line-height: 32px
+        &__content
+            flex-wrap: nowrap
+            padding: 20px
+        &__item
+            flex: 0 0 90%
+        &__info
+            .d-flex
+                flex-wrap: nowrap
+
+    .callback
+        margin: 0 0 80px 0
+        &__content
+            background: url(../img/callback__img.jpg) no-repeat top 72px right 24px var(--orange__light)
+            border-radius: 12px
+            padding: 24px
+        h2
+            font-size: 20px
+            line-height: 24px
+        h3
+            max-width: 164px
+            font-size: 12px
+            line-height: 16px
+        &__wrap
+            flex-wrap: wrap
+            input[type=text]
+                border-radius: 8px
+                margin: 0 0 12px 0
+            input[type=submit]
+                width: 100%
+                border-radius: 8px
+
+    .review
+        h2
+            font-size: 24px
+            line-height: 32px
+            margin: 0 0 24px 0
+        &__item
+            height: 200px
+        &__time
+            top: 20px
+            left: 20px
+            .col-33 &
+                top: 20px
+                left: 20px

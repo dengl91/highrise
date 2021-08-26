@@ -149,22 +149,6 @@ a.section-header
     &:hover
         color: var(--active)
 
-footer
-    padding: 200px 0 100px 0
-    .container
-        display: flex
-        flex-direction: column
-        align-items: center
-    nav
-        display: flex
-        margin: 30px 0 20px 0
-        a
-            font-size: 16px
-            color: var(--gray)
-            padding: 0 20px
-            &:hover
-                color: var(--text)
-
 .input
     &__wrap
         height: 56px
@@ -242,10 +226,57 @@ footer
         transform: scale(1)
 
 .footer
-    &__header
+    color: #fff
+    margin: 140px 0 0 0
+    .d-flex
+        margin: 0 0 32px 0
+    &__logo
+        margin: 0 56px 0 0
+    &__nav
+        font-size: 14px
+        line-height: 32px
+        white-space: nowrap
+        margin: 0 56px 0 0
+        a
+            &:hover
+                color: #fff
+    &__phone
         font-size: 20px
-        font-weight: 500
-        margin: 0 0 30px 0
+        font-weight: 700
+        line-height: 32px
+        white-space: nowrap
+        margin: 0 0 0 auto
+    &__copyright
+        font-size: 14px
+        color: var(--gray__400)
+        line-height: 32px
+        margin: 0 56px 0 0
+    &__policy
+        font-size: 14px
+        color: var(--gray__400)
+        line-height: 32px
+        text-decoration: underline
+    &__socials
+        display: flex
+        margin: 0 0 0 auto
+    &__social
+        width: 32px
+        height: 32px
+        background-repeat: no-repeat
+        background-position: 50%
+        background-color: var(--gray__600)
+        border-radius: 50%
+        margin: 0 8px 0 0
+        &.facebook
+            background-image: url(../img/social/facebook.svg)
+        &.vk
+            background-image: url(../img/social/vk.svg)
+        &.twitter
+            background-image: url(../img/social/twitter.svg)
+        &.whatsapp
+            background-image: url(../img/social/whatsapp.svg)
+        &.telegram
+            background-image: url(../img/social/telegram.svg)
 
 .social
     display: flex
@@ -265,15 +296,15 @@ footer
         &:hover
             opacity: 1
 
-.menu-btn
-    display: none
 .only-xs
     display: none
 
 @media screen and (max-width: 768px)
-
     .d-flex
         flex-wrap: wrap
+
+    [class*=col]
+        width: 100%
 
     .only-xs
         display: block
@@ -286,23 +317,31 @@ footer
         font-size: 15px
         line-height: 24px
 
-    footer
-        padding: 40px 0 130px 0
-        nav
-            flex-wrap: wrap
-            justify-content: center
-            a
-                font-size: 14px
-                line-height: 32px
-                padding: 0 10px
     .footer
-        &__header
-            display: none
-
-    .wom
-        width: 60px
-        height: 60px
-        top: 40px
+        background: var(--gray__600)
+        padding: 24px 20px
+        margin: 80px 0 0 0
+        &__logo
+            width: 100%
+            margin: 10px 0 0 0
+        &__nav
+            flex-direction: column
+            margin: 20px 0
+        &__phone
+            width: 100%
+            font-weight: 400
+            text-align: center
+            line-height: 40px
+            border: 1px solid #fff
+            border-radius: 6px
+            margin: 0 auto
+        &__copyright
+            width: 100%
+            margin: 0
+        &__socials
+            margin: 20px 0 0 0
+        &__social
+            background-color: var(--gray__800)
 
 
 @import layout/header

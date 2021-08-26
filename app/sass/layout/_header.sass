@@ -124,48 +124,107 @@ nav
                 top: 0
                 right: 12px
 
+.mobile
+    &__menu
+        display: none
 .header__menu-btn
     display: none
 
 @media screen and (max-width: 768px)
-    .row
-        flex-wrap: wrap
-    .toplink
-        font-size: 1em
-        display: flex
-        &__item
-            padding: 0 1.4em 0 0
-        &__line
-            width: 130px
-    .topmenu
-        display: none
+    .header
+        height: 80px
+        padding: 16px 0
+        transition: 0s
+        &.active
+            background: var(--gray__600)
+        &__logo
+            margin: 0 auto 0 0
+            img
+                height: 42px
+        nav
+            display: none
+        &__phone
+            display: none
+        &__btn
+            white-space: nowrap
+        .container
+            > .lang
+                display: none
 
-    .header__menu-btn
-        width: 24px
-        height: 20px
-        position: relative
-        display: block
-        z-index: 9
-        &__item
+    .mobile
+        &__menu
             width: 100%
-            height: 3px
-            background: #1a1a1a
+            background: var(--gray__600)
+            padding: 0 20px
             position: absolute
-            transition: 0.6s
-        &__item:first-child 
-            top: 0
-            .active &
-                transform: translateY(8px) rotate(45deg)
-        &__item:nth-child(2)
-            top: 8px
-            .active &
-                opacity: 0
-        &__item:last-child
-            top: 16px
-            .active &
-                transform: translateY(-8px) rotate(-45deg)
+            top: 80px
+            left: 0
+            &.active
+                display: flex
+                flex-direction: column
+        &__phone
+            margin: 10px 0 0 0
+        &__number
+            font-size: 24px
+            margin: 0 0 8px 0
+        &__workload
+            font-size: 10px
+            text-transform: uppercase
+            position: relative
+            &::before
+                content: ''
+                width: 8px
+                height: 8px
+                background: var(--status__green)
+                border-radius: 50%
+                display: inline-block
+                margin: 0 4px 0 0
+        &__nav
+            line-height: 56px
+            display: flex
+            flex-direction: column
+            margin: 44px 0
 
-    nav
-        a
-            font-size: 14px
-            padding: 0 10px
+    .menu-btn
+        width: 42px
+        height: 42px
+        background: var(--blue)
+        border-radius: 6px
+        flex: 0 0 42px
+        display: block
+        margin: 0 0 0 16px
+        position: relative
+        transition: 0.3s
+        &.active
+            background: var(--orange__light)
+        &__item
+            &:first-child
+                width: 10px
+                height: 2px
+                background: #fff
+                border-radius: 2px
+                position: absolute
+                top: 16px
+                right: 14px
+                transition: 0.3s
+                .active > &
+                    width: 18px
+                    background: var(--gray__800)
+                    transform: rotate(45deg)
+                    top: 20px
+                    right: 12px
+            &:last-child
+                width: 14px
+                height: 2px
+                background: #fff
+                border-radius: 2px
+                position: absolute
+                top: 24px
+                right: 14px
+                transition: 0.3s
+                .active > &
+                    width: 18px
+                    background: var(--gray__800)
+                    transform: rotate(-45deg)
+                    top: 20px
+                    right: 12px

@@ -57,6 +57,12 @@
             });
         });
 
+        // menu-btn
+
+        $('.menu-btn').on('click', function () {
+            $('.header, .mobile__menu').toggleClass('active');
+        });
+
         // lang
 
         $('.lang').on('click', function (e) {

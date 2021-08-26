@@ -105,3 +105,21 @@
     &__wrapper
         input
             width: 256px
+
+@media (max-width: 768px)
+    .search
+        &__content
+            margin: -40px 0 0 0
+            .container
+                flex-direction: column
+        &__item
+            border-bottom: 1px solid var(--gray__100)
+            &:first-child
+                border-radius: 12px 12px 0 0
+            &:last-child
+                border: none
+                border-radius: 0 0 12px 12px
+        &__subcontent
+            border-radius: 0 0 12px 12px
+            top: 100%
+            z-index: 1

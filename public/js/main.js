@@ -167,6 +167,15 @@
             autoplaySpeed: 4000
         });
 
+        // $('.actual__content').slick({
+        //     infinite: true,
+        //     slidesToShow: 3.5,
+        //     slidesToScroll: 1,
+        //     arrows: false,
+        //     dots: true,
+        //     autoplay: true
+        // });
+
         // request
 
         $('.form--order').on('submit', function (e) {
@@ -209,6 +218,10 @@
                 });
             });
         }
+
+        $('input[name=userphone]').on('keyup', function() {
+            console.log($(this).val().replace(/_/g, '').length);
+        });
 
         // flat
 

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highrise</title>
+
+    <link rel="stylesheet" href="public/css/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
+    <link rel="stylesheet" href="public/css/common.css">
+</head>
+<body>
+
+    <div class="overlay__wrapper">
+        <div class="overlay__content"></div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <a href="/" class="header__logo">
+                <img src="public/img/logo.svg" alt="Highrise">
+            </a>
+            <nav class="nav">
+                <a href="">Квартиры</a>
+                <a href="">Виллы</a>
+                <a href="">Инвестиции</a>
+                <a href="">Аренда</a>
+                <a href="">О компании</a>
+            </nav>
+            <div class="header__phone">
+                <div class="header__workload active">Мы работаем</div>
+                <a href="tel:88009323454" class="header__number">8 (800) 932 34 54</a>
+            </div>
+            <div class="header__btn" data-control="modal--request" data-focus="userphone">Заказать звонок</div>
+            <div class="lang">
+                <div class="lang__main ru"></div>
+                <div class="lang__content">
+                    <div class="lang__item en"></div>
+                    <div class="lang__item ru active"></div>
+                    <div class="lang__item th"></div>
+                </div>
+            </div>
+            <div class="menu-btn" data-toggle>
+                <div class="menu-btn__item"></div>
+                <div class="menu-btn__item"></div>
+            </div>
+            <div class="mobile__menu">
+                <div class="d-flex">
+                    <div class="mobile__phone">
+                        <a href="tel:88009323454" class="mobile__number">8 (800) 932 34 54</a>
+                        <div class="mobile__workload active">Мы работаем</div>
+                    </div>
+                    <div class="lang">
+                        <div class="lang__main ru"></div>
+                        <div class="lang__content">
+                            <div class="lang__item en"></div>
+                            <div class="lang__item ru active"></div>
+                            <div class="lang__item th"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile__nav">
+                    <a href="">Квартиры</a>
+                    <a href="">Виллы</a>
+                    <a href="">Инвестиции</a>
+                    <a href="">Аренда</a>
+                    <a href="">О компании</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="rental">
+        <div class="container">
+            <div class="rental__banner" data-bg="public/img/rental__img.jpg">
+                <h1>Долгосрочная аренда премиального жилья в Паттайе</h1>
+                <h3>Минимальный срок аренды - 1 месяц.</h3>
+                <div class="rental__filter">
+                    <div class="search__item">
+                        <div class="search__subtitle">Район</div>
+                        <div class="search__title">Любой</div>
+                        <div class="search__subcontent">
+                            <div class="search__check">
+                                <div class="search__wrap main">
+                                    <input type="checkbox" id="any" checked>
+                                    <label for="any">Любой</label>
+                                </div>
+                                <div class="search__wrap">
+                                    <input type="checkbox" id="north">
+                                    <label for="north">Северная Паттайя</label>
+                                </div>
+                                <div class="search__wrap">
+                                    <input type="checkbox" id="central">
+                                    <label for="central">Центральная Паттайя</label>
+                                </div>
+                                <div class="search__wrap">
+                                    <input type="checkbox" id="south">
+                                    <label for="south">Южная Паттайя</label>
+                                </div>
+                                <div class="search__wrap">
+                                    <input type="checkbox" id="djomtien">
+                                    <label for="djomtien">Джомтьен</label>
+                                </div>
+                                <div class="search__wrap">
+                                    <input type="checkbox" id="new">
+                                    <label for="new">Новая Паттайя</label>
+                                </div>
+                                <div class="search__wrap">
+                                    <input type="checkbox" id="old">
+                                    <label for="old">Старая Паттайя</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search__item">
+                        <div class="search__subtitle">Площадь, м2</div>
+                        <div class="search__title">Любой площади</div>
+                        <div class="search__subcontent range">
+                            <div class="search__subtitle">Укажите диапазон площади:</div>
+                            <div class="filter__range">
+                                <span><input type="number" class="low-value" placeholder="23" min="23" max="488" inputmode="numeric" pattern="[0-9]"><span class="filter__hint">м2</span></span>
+                                <span class="filter__sep">-</span>
+                                <span><input type="number" class="high-value" placeholder="488" min="23" max="488" inputmode="numeric" pattern="[0-9]"><span class="filter__hint">м2</span></span>
+                            </div>
+                            <div class="multirange__content" data-fixmin="23" data-fixmax="488" data-min="0" data-max="100" data-fixed="0">
+                                <div class="multirange__bg"></div>
+                                <div class="multirange__line"></div>
+                                <div class="multirange__thumb"></div>
+                                <div class="multirange__subthumb"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search__item">
+                        <div class="search__subtitle">Стоимость объекта, млн. ₽</div>
+                        <div class="search__title">Любой стоимости</div>
+                        <div class="search__subcontent range">
+                            <div class="search__subtitle">Укажите диапазон стоимости:</div>
+                            <div class="filter__range">
+                                <span><input type="number" class="low-value" placeholder="1" min="1" max="10" inputmode="numeric" pattern="[0-9]"><span class="filter__hint">млн. ₽</span></span>
+                                <span class="filter__sep">-</span>
+                                <span><input type="number" class="high-value" placeholder="10" min="1" max="10" inputmode="numeric" pattern="[0-9]"><span class="filter__hint">млн. ₽</span></span>
+                            </div>
+                            <div class="multirange__content" data-fixmin="1" data-fixmax="10" data-min="0" data-max="100" data-fixed="1">
+                                <div class="multirange__bg"></div>
+                                <div class="multirange__line"></div>
+                                <div class="multirange__thumb"></div>
+                                <div class="multirange__subthumb"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search__item search__extra" data-control="modal--extra">
+                        <div class="search__subtitle">Дополнительно</div>
+                        <div class="search__title">Не выбрано</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="property">
+        <div class="container">
+            <div class="property__filter">
+                <div class="filter__nav">
+                    <div class="filter__nav-item active" data-active>Сначала новые</div>
+                    <div class="filter__nav-item" data-active>Сначала популярные</div>
+                    <div class="filter__nav-item" data-active>Сначала дорогие</div>
+                    <div class="filter__nav-item" data-active>Сначала дешевые</div>
+                </div>
+                <div class="filter__nav">
+                    <div class="filter__nav-item active" data-active data-nav-for="property__tab">Списком</div>
+                    <div class="filter__nav-item" id="addmarker" data-active data-nav-for="property__tab">На карте</div>
+                </div>
+            </div>
+            <div class="property__tab active">
+                <div class="property__content">
+                    <div class="property__item">
+                        <div class="property__img">
+                            <img src="public/img/actual__img.png" alt="property">
+                        </div>
+                        <div class="property__info">
+                            <div class="d-flex">
+                                <div class="property__title">Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo</div>
+                                <div class="property__range">36м2</div>
+                            </div>
+                            <div class="property__place">Паттайя, Джомтьен</div>
+                            <div class="property__price">84 990 ₽/мес</div>
+                            <div class="property__card beach">500 м</div>
+                        </div>
+                    </div>
+                    <div class="property__item">
+                        <div class="property__img">
+                            <img src="public/img/actual__img.png" alt="property">
+                        </div>
+                        <div class="property__info">
+                            <div class="d-flex">
+                                <div class="property__title">Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo</div>
+                                <div class="property__range">36м2</div>
+                            </div>
+                            <div class="property__place">Паттайя, Джомтьен</div>
+                            <div class="property__price">84 990 ₽/мес</div>
+                            <div class="property__card beach">500 м</div>
+                        </div>
+                    </div>
+                    <div class="property__item">
+                        <div class="property__img">
+                            <img src="public/img/actual__img.png" alt="property">
+                        </div>
+                        <div class="property__info">
+                            <div class="d-flex">
+                                <div class="property__title">Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo</div>
+                                <div class="property__range">36м2</div>
+                            </div>
+                            <div class="property__place">Паттайя, Джомтьен</div>
+                            <div class="property__price">84 990 ₽/мес</div>
+                            <div class="property__card beach">500 м</div>
+                        </div>
+                    </div>
+                    <div class="property__item">
+                        <div class="property__img">
+                            <img src="public/img/actual__img.png" alt="property">
+                        </div>
+                        <div class="property__info">
+                            <div class="d-flex">
+                                <div class="property__title">Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo</div>
+                                <div class="property__range">36м2</div>
+                            </div>
+                            <div class="property__place">Паттайя, Джомтьен</div>
+                            <div class="property__price">84 990 ₽/мес</div>
+                            <div class="property__card beach">500 м</div>
+                        </div>
+                    </div>
+                    <div class="property__item">
+                        <div class="property__img">
+                            <img src="public/img/actual__img.png" alt="property">
+                        </div>
+                        <div class="property__info">
+                            <div class="d-flex">
+                                <div class="property__title">Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo</div>
+                                <div class="property__range">36м2</div>
+                            </div>
+                            <div class="property__place">Паттайя, Джомтьен</div>
+                            <div class="property__price">84 990 ₽/мес</div>
+                            <div class="property__card beach">500 м</div>
+                        </div>
+                    </div>
+                    <div class="property__item">
+                        <div class="property__img">
+                            <img src="public/img/actual__img.png" alt="property">
+                        </div>
+                        <div class="property__info">
+                            <div class="d-flex">
+                                <div class="property__title">Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo</div>
+                                <div class="property__range">36м2</div>
+                            </div>
+                            <div class="property__place">Паттайя, Джомтьен</div>
+                            <div class="property__price">84 990 ₽/мес</div>
+                            <div class="property__card beach">500 м</div>
+                        </div>
+                    </div>
+                    <div class="property__item">
+                        <div class="property__img">
+                            <img src="public/img/actual__img.png" alt="property">
+                        </div>
+                        <div class="property__info">
+                            <div class="d-flex">
+                                <div class="property__title">Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo</div>
+                                <div class="property__range">36м2</div>
+                            </div>
+                            <div class="property__place">Паттайя, Джомтьен</div>
+                            <div class="property__price">84 990 ₽/мес</div>
+                            <div class="property__card beach">500 м</div>
+                        </div>
+                    </div>
+                    <div class="property__item">
+                        <div class="property__img">
+                            <img src="public/img/actual__img.png" alt="property">
+                        </div>
+                        <div class="property__info">
+                            <div class="d-flex">
+                                <div class="property__title">Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo</div>
+                                <div class="property__range">36м2</div>
+                            </div>
+                            <div class="property__place">Паттайя, Джомтьен</div>
+                            <div class="property__price">84 990 ₽/мес</div>
+                            <div class="property__card beach">500 м</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="property__nav">
+                    <div class="property__nav-left"></div>
+                    <div class="property__nav-item active">1</div>
+                    <div class="property__nav-item">2</div>
+                    <div class="property__nav-item">3</div>
+                    <div class="property__nav-right"></div>
+                </div>
+            </div>
+            <div class="property__tab">
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="callback">
+        <div class="container">
+            <div class="callback__content">
+                <h2>Нужна помощь с выбором?</h2>
+                <h3>Наш менеджер перезвонит вам через 10 минут и подберет лучшие варианты недвижимости в Паттайе.</h3>
+                <form class="callback__form">
+                    <div class="callback__wrap">
+                        <input type="text" name="userphone" inputmode="numeric">
+                        <input type="submit" class="disabled" value="Перезвоните мне">
+                    </div>
+                    <div class="callback__hint">Оставляя заявку вы даете свое <a href="" target="_blank">согласие на обработку персодальных данных</a></div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="d-flex">
+                <div class="footer__logo">
+                    <img src="public/img/logo__footer.svg" alt="Highrise">
+                </div>
+                <nav class="footer__nav">
+                    <a href="">Новостройки</a>
+                    <a href="">Вторичное жилье</a>
+                    <a href="">Виллы</a>
+                    <a href="">Инвестиции</a>
+                    <a href="">Аренда</a>
+                    <a href="">О компании</a>
+                </nav>
+                <a href="tel:88009323454" class="footer__phone">8 (800) 932 34 54</a>
+            </div>
+            <div class="d-flex">
+                <div class="footer__copyright">© Агенство недвижимости HIGHRISE.</div>
+                <a href="" class="footer__policy">Политика конфеденциальности</a>
+                <div class="footer__socials">
+                    <a href="" class="footer__social facebook"></a>
+                    <a href="" class="footer__social vk"></a>
+                    <a href="" class="footer__social twitter"></a>
+                    <a href="" class="footer__social whatsapp"></a>
+                    <a href="" class="footer__social telegram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal modal--request">
+        <div class="modal__container">
+            <div class="d-flex">
+                <div class="col-60">
+                    <div class="modal__title">Хотите, чтобы мы вам перезвонили?</div>
+                    <form class="form__request">
+                        <div class="input__wrap">
+                            <label for="now">Когда вам перезвоить</label>
+                            <input type="text" id="now" name="now" placeholder="Сейчас">
+                        </div>
+                        <div class="input__wrap">
+                            <label for="userphone">Ваш телефон</label>
+                            <input type="text" id="userphone" name="userphone" placeholder="+Х (ХХХ) ХХХ-ХХ-ХХ" inputmode="numeric" autocomplete="off">
+                        </div>
+                        <input type="submit" id="request-btn" value="Позвонить мне">
+                    </form>
+                </div>
+                <div class="col-40"></div>
+            </div>
+            <div class="modal__close"></div>
+        </div>
+    </div>
+
+    <div class="modal modal--flat">
+        <div class="modal__container">
+            <div class="modal__title">Квартира 32.75 м2</div>
+            <div class="modal__status empty">Свободна</div>
+            <div class="gallery">
+                <div class="row">
+                    <div class="col-50">
+                        <div class="gallery__img main">
+                            <img src="public/img/gallery__img--1.jpg" alt="Panora Condominium" data-fancybox="flat_1">
+                        </div>
+                    </div>
+                    <div class="col-50">
+                        <div class="row">
+                            <div class="col-50">
+                                <div class="gallery__img">
+                                    <img src="public/img/gallery__img--2.jpg" alt="Panora Condominium" data-fancybox="flat_1">
+                                </div>
+                            </div>
+                            <div class="col-50">
+                                <div class="gallery__img">
+                                    <img src="public/img/gallery__img--3.jpg" alt="Panora Condominium" data-fancybox="flat_1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-50">
+                                <div class="gallery__img">
+                                    <img src="public/img/gallery__img--3.jpg" alt="Panora Condominium" data-fancybox="flat_1">
+                                </div>
+                            </div>
+                            <div class="col-50">
+                                <div class="gallery__img">
+                                    <img src="public/img/gallery__img--2.jpg" alt="Panora Condominium" data-fancybox="flat_1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__features">
+                <div class="modal__feature">Стоимость</div>
+                <div class="modal__feature-sep"></div>
+                <div class="modal__val">12 769 225 ₽</div>
+            </div>
+            <div class="modal__features">
+                <div class="modal__feature">Стоимость за квадрат</div>
+                <div class="modal__feature-sep"></div>
+                <div class="modal__val">389 900 ₽/м2</div>
+            </div>
+            <div class="modal__features">
+                <div class="modal__feature">Площадь</div>
+                <div class="modal__feature-sep"></div>
+                <div class="modal__val">32.75 м2</div>
+            </div>
+            <div class="modal__features">
+                <div class="modal__feature">Этаж</div>
+                <div class="modal__feature-sep"></div>
+                <div class="modal__val">15</div>
+            </div>
+            <div class="modal__features">
+                <div class="modal__feature">Вид</div>
+                <div class="modal__feature-sep"></div>
+                <div class="modal__val">На море</div>
+            </div>
+            <div class="modal__features">
+                <div class="modal__feature">Отделка</div>
+                <div class="modal__feature-sep"></div>
+                <div class="modal__val">Под ключ</div>
+            </div>
+            <div class="modal__subtitle">План этажа</div>
+            <div class="modal__flatimg-wrap">
+                <img src="public/img/plan__img.jpg" class="modal__flatimg" alt="План этажа" data-fancybox="plan-level">
+                <img src="public/img/flat__img.jpg" class="modal__flatimg" alt="План квартиры" data-fancybox="plan-flat">
+            </div>
+            <div class="modal__btns">
+                <div class="intro__btn">Записаться на экскурсию по объекту</div>
+                <div class="modal__close-btn">Закрыть</div>
+                <a href="" class="modal__dl-btn"></a>
+            </div>
+            <div class="modal__close"></div>
+        </div>
+    </div>
+
+    <div class="modal modal--extra">
+        <div class="modal__container">
+            <div class="extra__title">Дополнтительные параметры</div>
+            <div class="extra__subtitle">Планировка</div>
+            <div class="extra__items">
+                <div class="search__wrap">
+                    <input type="checkbox" id="room1">
+                    <label for="room1">Студия</label>
+                </div>
+                <div class="search__wrap">
+                    <input type="checkbox" id="room2">
+                    <label for="room2">2 комнаты</label>
+                </div>
+                <div class="search__wrap">
+                    <input type="checkbox" id="room3">
+                    <label for="room3">3 комнаты</label>
+                </div>
+                <div class="search__wrap">
+                    <input type="checkbox" id="room4">
+                    <label for="room4">Больше 3</label>
+                </div>
+            </div>
+            <div class="extra__sep"></div>
+            <div class="extra__subtitle">Удобства</div>
+            <div class="extra__items">
+                <div class="search__wrap">
+                    <input type="checkbox" id="sea">
+                    <label for="sea">Близко к морю</label>
+                </div>
+                <div class="search__wrap">
+                    <input type="checkbox" id="gym">
+                    <label for="gym">Спортзал</label>
+                </div>
+                <div class="search__wrap">
+                    <input type="checkbox" id="pool">
+                    <label for="pool">Бассейн</label>
+                </div>
+                <div class="search__wrap">
+                    <input type="checkbox" id="security">
+                    <label for="security">24/7 охрана</label>
+                </div>
+                <div class="search__wrap">
+                    <input type="checkbox" id="parking">
+                    <label for="parking">Крытая парковка</label>
+                </div>
+                <div class="search__wrap">
+                    <input type="checkbox" id="room4">
+                    <label for="room4">Придомовая парковка</label>
+                </div>
+                <div class="search__wrap">
+                    <input type="checkbox" id="video">
+                    <label for="video">Видеонаблюдение</label>
+                </div>
+                <div class="search__wrap">
+                    <input type="checkbox" id="sauna">
+                    <label for="sauna">Сауна</label>
+                </div>
+                <div class="search__wrap">
+                    <input type="checkbox" id="tennis">
+                    <label for="tennis">Теннисный корт</label>
+                </div>
+            </div>
+            <div class="extra__btns">
+                <div class="extra__btn apply">Применить</div>
+                <div class="extra__btn clear">Очистить фильтр</div>
+            </div>
+            <div class="modal__close"></div>
+        </div>
+    </div>
+
+    <script>
+        var currency = '₽';
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: { lat: 12.8948, lng: 100.8787 },
+                styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape.natural","elementType":"all","stylers":[{"visibility":"on"},{"color":"#e6e6e6"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#ff0000"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#fd9836"},{"saturation":"85"},{"lightness":"31"},{"gamma":"1.24"}]},{"featureType":"road.highway","elementType":"labels.text","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"hue":"#ff0000"},{"saturation":"1"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"transit.station","elementType":"all","stylers":[{"visibility":"simplified"},{"hue":"#ff0000"},{"saturation":"-100"}]},{"featureType":"transit.station.airport","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"transit.station.bus","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"transit.station.rail","elementType":"all","stylers":[{"visibility":"simplified"},{"hue":"#ff7e00"},{"saturation":"-100"},{"lightness":"19"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#d7d7d7"},{"visibility":"on"}]}]
+            });
+            // Create an array of alphabetical characters used to label the markers.
+            var labels = ['1580', '1400', '1860', '2300', '2860', '2490', '1840', '3240'];
+            var names = ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh', 'Eights'];
+            var descriptions = [
+                'Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo',
+                'Вторая квартира на продажу и аренду в T.W.Jomtien Beach Condo',
+                'Третья квартира на продажу и аренду в T.W.Jomtien Beach Condo',
+                'Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo',
+                'Вторая квартира на продажу и аренду в T.W.Jomtien Beach Condo',
+                'Третья квартира на продажу и аренду в T.W.Jomtien Beach Condo',
+                'Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo',
+                'Двухкомнатная квартира на продажу и аренду в T.W.Jomtien Beach Condo'
+            ];
+            // Add some markers to the map.
+            // Note: The code uses the JavaScript Array.prototype.map() method to
+            // create an array of markers based on a given "locations" array.
+            // The map() method here has nothing to do with the Google Maps API.
+            var infowindow = new google.maps.InfoWindow();
+            var markers = locations.map((location, i) => {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    label: {
+                        text: labels[i] + ' ' + currency,
+                        color: '#ffffff'
+                    },
+                    name: names[i],
+                    description: descriptions[i],
+                    icon: 'public/img/icons/pin-price.svg',
+                });
+                marker.addListener('click', () => {
+                    console.log(marker.description);
+                    var content = document.createElement("div");
+
+                    var nameElement = document.createElement("h2");
+                    nameElement.textContent = marker.name;
+
+                    var linkElement = document.createElement("a");
+                    linkElement.href = 'https://google.ru';
+                    linkElement.target = "_blank";
+                    linkElement.textContent = marker.description;
+
+                    content.appendChild(nameElement);
+                    content.appendChild(linkElement);
+                    infowindow.setContent(content);
+                    infowindow.open(map, marker);
+                });
+                return marker;
+            });
+            // Add a marker clusterer to manage the markers.
+            new MarkerClusterer(map, markers, {
+                imagePath:
+                "public/img/icons/m",
+            });
+
+            document.querySelector('#addmarker').addEventListener('click', () => {
+                var labels = ['1640', '1400'];
+                var locations = [
+                    { lat: 12.642, lng: 100.8787 },
+                    { lat: 12.890668, lng: 100.916782 }
+                ];
+                locations.map((location, i) => {
+                    var marker = new google.maps.Marker({
+                        position: location,
+                        label: {
+                            text: labels[i] + ' ' + currency,
+                            color: '#ffffff'
+                        },
+                        icon: 'public/img/icons/pin-price.svg',
+                        map: map
+                    });
+                });
+            });
+        }
+        var locations = [
+            { lat: 12.8948, lng: 100.8787 },
+            { lat: 12.890668, lng: 100.916782 },
+            { lat: 12.897247, lng: 100.877456 },
+            { lat: 12.890706, lng: 100.878033 },
+            { lat: 12.888112, lng: 100.878108 },
+            { lat: 12.885978, lng: 100.880168 },
+            { lat: 12.829265, lng: 100.923684 },
+            { lat: 12.852054, lng: 100.920190 }
+        ];
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap" async></script>
+    <script src="public/js/markercluster.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/imask@6.1.0/dist/imask.js"></script>
+    <script src="public/js/slick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <script src="public/js/main.js"></script>
+
+    <script>
+        console.log('ready');
+        
+    </script>
+    
+</body>
+</html>

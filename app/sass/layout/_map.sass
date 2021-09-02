@@ -1,0 +1,50 @@
+// 
+// Theme Name: New Clean Template
+// _map.sass
+//
+// app/sass/layout/
+//
+
+.map
+    margin: 0 0 56px 0
+    &__title
+        font-size: 32px
+        color: #fff
+        margin: 0 0 24px 0
+    &__subtitle
+        color: #fff
+        margin: 0 0 16px 0
+
+#map
+    height: 460px
+    background: var(--gray__100)
+    border-radius: 12px
+    margin: 0 0 56px 0
+
+.gmnoprint
+    div
+        &[draggable=false]
+            background: none !important
+.gm-control-active
+    color: #fff
+    background: var(--blue) !important
+    border-radius: 10px
+    img
+        filter: brightness(10)
+.gm-fullscreen-control
+    border-radius: 10px !important
+div[aria-label] 
+    span
+        width: 52px
+        font-size: 18px
+        color: #fff
+        display: inline-block
+div[role="dialog"]
+    background: #333
+    a
+        color: var(--blue)
+        text-decoration: underline
+
+@media (max-width: 768px)
+    #map
+        height: 320px

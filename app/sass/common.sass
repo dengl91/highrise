@@ -32,7 +32,7 @@
     --gray__800: #191926
     --features__bg: #36363F
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap')
 
 body
     font-family: 'Montserrat', sans-serif
@@ -41,6 +41,8 @@ body
     background: var(--text)
     padding: 0
     margin: 0
+    &.scrolled
+        padding: 40px 0 0 0
 
 html, body
     scroll-behavior: smooth
@@ -190,6 +192,8 @@ a.section-header
         border-radius: 8px
         padding: 40px 30px
         animation: fadeIn 0.4s forwards
+        .modal--flat &
+            max-width: 980px
         span
             text-align: center
             display: block
@@ -346,3 +350,7 @@ a.section-header
 @import layout/search
 @import layout/multirange
 @import layout/homepage
+@import layout/single
+@import layout/catalog
+@import layout/map
+@import layout/fancybox
